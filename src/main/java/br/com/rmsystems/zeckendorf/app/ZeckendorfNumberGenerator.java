@@ -1,4 +1,4 @@
-package br.com.rmsystems.zeckendorf;
+package br.com.rmsystems.zeckendorf.app;
 
 public class ZeckendorfNumberGenerator {
 
