@@ -1,15 +1,17 @@
 package br.com.rmsystems.zeckendorf;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import org.junit.platform.runner.JUnitPlatform;
+import org.junit.runner.RunWith;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+@RunWith(JUnitPlatform.class)
 public class ApplicationMainTest {
 
-    @Test(expected = Exception.class)
+    @Test()
     public void whenStartApplicationWithoutArgumentsThrowAnException() {
-        ApplicationMain.main(null);
+        assertThrows(RuntimeException.class, () -> ApplicationMain.main(null));
     }
 
     @Test
