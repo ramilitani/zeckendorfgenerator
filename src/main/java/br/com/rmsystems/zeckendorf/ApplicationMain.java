@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class ApplicationMain {
 
-    private static final int BUFFER = 1000;
+    private static final int BUFFER = 10000;
 
     public static void main(String[] args)
     {
@@ -71,15 +71,18 @@ public class ApplicationMain {
             int size = fibonacciNumberList.size();
             int i = 0;
             FibonacciNumber fibonacciNumber = null;
+            boolean used = true;
             while (index>0) {
-                if (i < size) {
+                if (i < size && used) {
                     fibonacciNumber = fibonacciNumberList.get(i);
                     i++;
                 }
                 if(index == fibonacciNumber.getIndex()) {
                     System.out.print("1");
+                    used = true;
                 } else {
                     System.out.print("0");
+                    used = false;
                 }
                 index--;
             }
