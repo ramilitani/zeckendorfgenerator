@@ -10,13 +10,13 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import br.com.rmsystems.zeckendorf.app.ZeckendorfNumberGenerator.FibonacciNumber;
+import br.com.rmsystems.zeckendorf.model.FibonacciNumber;
 
 @RunWith(JUnitPlatform.class)
 public class ZeckendorfNumberGeneratorTest {
 
     static ZeckendorfNumberGenerator zeckendorfNumberGenerator;
-    static List<ZeckendorfNumberGenerator.FibonacciNumber> sumFibonacciNumberList;
+    static List<FibonacciNumber> sumFibonacciNumberList;
     static List<List<Integer>> listOfAllIntegers;
 
     @BeforeAll

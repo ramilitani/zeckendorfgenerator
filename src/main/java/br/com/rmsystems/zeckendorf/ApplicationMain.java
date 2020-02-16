@@ -1,10 +1,13 @@
 package br.com.rmsystems.zeckendorf;
 
 import br.com.rmsystems.zeckendorf.app.ZeckendorfNumberGenerator;
-import br.com.rmsystems.zeckendorf.app.ZeckendorfNumberGenerator.FibonacciNumber;
+import br.com.rmsystems.zeckendorf.model.FibonacciNumber;
 
 import java.util.List;
 
+/**
+ *
+ */
 public class ApplicationMain {
 
     public static void main(String[] args)
@@ -44,12 +47,16 @@ public class ApplicationMain {
         }
     }
 
+    /**
+     * Print in a zeckendorf representation
+     * @param fibonacciNumberList
+     */
     private static void printZeckendorfRepresentation(List<FibonacciNumber> fibonacciNumberList)
     {
         if (!fibonacciNumberList.isEmpty()) {
             int index = fibonacciNumberList.get(0).getIndex();
-            int i = 0;
             int size = fibonacciNumberList.size();
+            int i = 0;
             FibonacciNumber fibonacciNumber = null;
             while (index>0) {
                 if (i < size) {
