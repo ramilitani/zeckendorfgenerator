@@ -10,6 +10,8 @@ import java.util.List;
  */
 public class ApplicationMain {
 
+    private static final int BUFFER = 1000;
+
     public static void main(String[] args)
     {
         System.out.println("Initializing the ZeckendorfNumberGenerator application");
@@ -23,10 +25,21 @@ public class ApplicationMain {
             throw new RuntimeException("The first argument must be less than the second argument");
         }
 
-        ZeckendorfNumberGenerator generator = new ZeckendorfNumberGenerator();
-        List<List<FibonacciNumber>> sumList = generator.getZeckendorfRepresentation(a,b);
-        print(sumList, a);
+        int elements = b-a;
+        int partition = 0;
+        while (elements > 0) {
+            if (elements > BUFFER) {
+                partition += BUFFER;
+            } else {
+                partition = b;
+            }
 
+            ZeckendorfNumberGenerator generator = new ZeckendorfNumberGenerator();
+            List<List<FibonacciNumber>> sumList = generator.getZeckendorfRepresentation(a,partition);
+            print(sumList, a);
+            elements = elements -BUFFER;
+            a = partition;
+        }
     }
 
     /**
